@@ -20,6 +20,7 @@ export default function SpecsSection() {
 
   return (
     <section
+      id="specs"
       ref={ref}
       style={{
         position: "relative",

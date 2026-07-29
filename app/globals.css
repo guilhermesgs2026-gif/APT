@@ -50,6 +50,86 @@ button {
   font-weight: 500;
 }
 
+/* Subtle film-grain texture for premium depth, sits above the video backdrop */
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+
+.pill-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 1.75rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, color 0.25s ease;
+}
+
+.pill-button:hover {
+  transform: translateY(-2px);
+}
+
+.pill-button-solid {
+  background: var(--color-accent);
+  color: #000000;
+}
+
+.pill-button-solid:hover {
+  background: var(--color-accent-hover);
+  box-shadow: 0 8px 30px rgba(79, 209, 197, 0.35);
+}
+
+.pill-button-outline {
+  border: 1px solid var(--color-accent);
+  color: var(--color-accent);
+  background: transparent;
+}
+
+.pill-button-outline:hover {
+  background: var(--color-accent);
+  color: #000000;
+  box-shadow: 0 8px 30px rgba(79, 209, 197, 0.35);
+}
+
+@keyframes glow-breathe {
+  0%, 100% { opacity: 0.55; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(1.08); }
+}
+
+.ambient-glow {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(79,209,197,0.22) 0%, transparent 70%);
+  filter: blur(40px);
+  animation: glow-breathe 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.feature-card {
+  transition: transform 0.35s ease, border-color 0.35s ease, background 0.35s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(79, 209, 197, 0.5);
+  background: rgba(79, 209, 197, 0.04);
+}
+
+@media (max-width: 768px) {
+  .navbar-links a:not(:last-child) {
+    display: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;
@@ -58,3 +138,4 @@ button {
     scroll-behavior: auto !important;
   }
 }
+

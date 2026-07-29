@@ -65,23 +65,13 @@ export default function ClosingCTA() {
 
       <motion.a
         href="#"
+        className="pill-button pill-button-outline"
         initial={{ opacity: 0, y: 24 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.7, delay: 0.2, ease: [0.25, 0, 0, 1] }}
-        whileHover={{ background: "var(--color-accent)", color: "#000000" }}
-        style={{
-          position: "relative",
-          display: "inline-block",
-          padding: "1rem 2.5rem",
-          border: "1px solid var(--color-accent)",
-          color: "var(--color-accent)",
-          fontSize: "0.75rem",
-          letterSpacing: "0.15em",
-          textTransform: "uppercase",
-          fontWeight: 500,
-        }}
+        style={{ position: "relative" }}
       >
-        Solicitar demonstração
+        Solicitar demonstração →
       </motion.a>
     </section>
   );

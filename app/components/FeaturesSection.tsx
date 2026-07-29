@@ -32,17 +32,30 @@ const features = [
 
 function FeatureIcon() {
   return (
-    <svg
-      width="28"
-      height="28"
-      viewBox="0 0 28 28"
-      fill="none"
-      stroke="var(--color-accent)"
-      strokeWidth="1.4"
+    <div
+      style={{
+        width: "44px",
+        height: "44px",
+        borderRadius: "50%",
+        border: "1px solid var(--color-border-subtle)",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        background: "rgba(79,209,197,0.06)",
+      }}
     >
-      <rect x="4" y="4" width="20" height="20" rx="2" />
-      <path d="M9 14h10M14 9v10" />
-    </svg>
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 28 28"
+        fill="none"
+        stroke="var(--color-accent)"
+        strokeWidth="1.4"
+      >
+        <rect x="4" y="4" width="20" height="20" rx="2" />
+        <path d="M9 14h10M14 9v10" />
+      </svg>
+    </div>
   );
 }
 
@@ -52,6 +65,7 @@ export default function FeaturesSection() {
 
   return (
     <section
+      id="diferenciais"
       ref={ref}
       style={{
         position: "relative",
@@ -102,9 +116,11 @@ export default function FeaturesSection() {
               delay: 0.15 + i * 0.1,
               ease: [0.25, 0, 0, 1],
             }}
+            className="feature-card"
             style={{
-              borderTop: "1px solid var(--color-border-subtle)",
-              paddingTop: "1.5rem",
+              border: "1px solid var(--color-border-subtle)",
+              borderRadius: "12px",
+              padding: "2rem",
             }}
           >
             <FeatureIcon />
