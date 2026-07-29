@@ -13,8 +13,9 @@ export default function ClosingCTA() {
       ref={ref}
       style={{
         position: "relative",
+        zIndex: 1,
         padding: "12rem 6vw",
-        background: "var(--color-bg)",
+        background: "rgba(0,0,0,0.92)",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",

@@ -21,7 +21,12 @@ export default function SpecsSection() {
   return (
     <section
       ref={ref}
-      style={{ padding: "10rem 6vw", background: "var(--color-bg)" }}
+      style={{
+        position: "relative",
+        zIndex: 1,
+        padding: "10rem 6vw",
+        background: "rgba(0,0,0,0.92)",
+      }}
     >
       <motion.span
         className="label"
